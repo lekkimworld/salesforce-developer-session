@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Contact Pills" icon-name="standard:contact">
+        <template if:true={contact.data}>
+            <div class="slds-m-around_medium">
+                <template for:each={tags} for:item="tag">
+                    <lightning-pill key={tag} 
+                        icon-name="standard:account" 
+                        label={tag} 
+                        class="my-pill slds-p-left-small"
+                        onclick={handleClick}>
+                    </lightning-pill>
+                </template>
+            </div>
+        </template>
+        <template if:true={contact.error}>
+            {contact.error}
+        </template>
+    </lightning-card>
+</template>

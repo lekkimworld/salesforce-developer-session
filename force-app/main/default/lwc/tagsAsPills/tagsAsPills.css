@@ -1,0 +1,7 @@
+.my-pill {
+    --sds-c-pill-color-background: orange;
+}
+
+.my-pill:hover {
+    --sds-c-pill-color-background: #b0c4df;
+}
