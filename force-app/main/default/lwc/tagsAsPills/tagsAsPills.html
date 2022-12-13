@@ -4,10 +4,12 @@
             <div class="slds-m-around_medium">
                 <template for:each={tags} for:item="tag">
                     <lightning-pill key={tag} 
-                        icon-name="standard:account" 
                         label={tag} 
                         class="my-pill slds-p-left-small"
                         onclick={handleClick}>
+                        <lightning-icon icon-name="standard:account" alternative-text="Account">
+                        </lightning-icon>
+                        {label}
                     </lightning-pill>
                 </template>
             </div>
