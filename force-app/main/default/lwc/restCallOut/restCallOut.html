@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="REST callout" icon-name="standard:contact">
+        <template if:true={customers}>
+            <div class="slds-m-around_medium">
+                <p>Read {customerCount} customers from API</p>
+                <lightning-button label="Read random customer" onclick={readRandomCustomer}></lightning-button>
+                <template if:true={accounts}>
+                    <ul class="slds-m-top_medium">
+                        <template for:each={accounts} for:item="account">
+                            <li key={account.accountNo}>{account.regNo} {account.accountNo}</li>
+                        </template>
+                    </ul>
+                </template>
+            </div>
+        </template>
+        <template if:true={error}>
+            {contact.error}
+        </template>
+    </lightning-card>
+</template>

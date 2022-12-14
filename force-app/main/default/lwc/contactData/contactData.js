@@ -2,6 +2,7 @@ import { LightningElement, api, wire } from "lwc";
 import { getRecord } from "lightning/uiRecordApi";
 
 const FIELDS = [
+  "Contact.Id",
   "Contact.Name",
   "Contact.Title",
   "Contact.Phone",
