@@ -1,4 +1,4 @@
-# developer-session #
+# salesforce-developer-session #
 
 ```
 sfdx force:org:create --setdefaultusername -f config/project-scratch-def.json
@@ -8,5 +8,6 @@ sfdx force:source:deploy -m ApexClass,LightningComponentBundle:contactData,Light
 ```
 
 ```
-sfdx force:source:deploy -m LightningComponentBundle:tagsAsPills
+sfdx force:source:deploy -m CustomObject,Layout,LightningComponentBundle:tagsAsPills
+sfdx force:user:permset:assign -n Tags_Access
 ```

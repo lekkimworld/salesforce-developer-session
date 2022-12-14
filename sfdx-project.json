@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "universalrobots-dev-session",
+  "name": "salesforce-developer-session",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "55.0"
