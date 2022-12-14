@@ -1,19 +1,17 @@
 import { LightningElement, api, wire } from "lwc";
-import { getRecord } from "lightning/uiRecordApi";
+import { getRecord, getFieldValue } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
-const FIELDS = [
-  "Contact.Tags__c"
-];
+import TAGS_FIELD from "@salesforce/schema/Contact.Tags__c";
 
 export default class TagsAsPills extends LightningElement {
   @api recordId;
 
-  @wire(getRecord, { recordId: "$recordId", fields: FIELDS })
+  @wire(getRecord, { recordId: "$recordId", fields: [TAGS_FIELD] })
   contact;
 
   get tags() {
-    return this.contact.data.fields.Tags__c.value.split(" ");
+    return getFieldValue(this.contact.data, TAGS_FIELD).split(" ");
   }
   
   handleClick(ev) {
